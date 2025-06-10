@@ -6,23 +6,18 @@ import java.util.Stack;
 
 import ar.edu.unahur.obj2.observer.Oferta;
 import ar.edu.unahur.obj2.observer.excepciones.OfertaSubastadorException;
-import ar.edu.unahur.obj2.observer.observadores.Subastador;
+import ar.edu.unahur.obj2.observer.observadores.Observer;
 
 public class ProductoSubastado implements Observable{
     private Stack<Oferta> ofertas = new Stack<>();
-    private List<Subastador> subastadores = new ArrayList<>();
-
-    public void agregarOferta(Oferta oferta){
-        ofertas.add(oferta);
-        this.notificar();
-    }
+    private List<Observer> subastadores = new ArrayList<>();
 
     public void reset(){
         ofertas = new Stack<>();
         subastadores = new ArrayList<>();
     }
 
-    public void agregarSubastador(Subastador subastador){
+    public void agregarSubastador(Observer subastador){
         subastadores.add(subastador);
     }
 

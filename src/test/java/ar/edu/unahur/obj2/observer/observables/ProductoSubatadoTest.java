@@ -8,12 +8,21 @@ import org.junit.jupiter.api.Test;
 
 import ar.edu.unahur.obj2.observer.excepciones.OfertaSubastadorException;
 import ar.edu.unahur.obj2.observer.observadores.Subastador;
+import ar.edu.unahur.obj2.observer.strategy.SubastadorArriesgado;
+import ar.edu.unahur.obj2.observer.strategy.SubastadorConLimite;
+import ar.edu.unahur.obj2.observer.strategy.SubastadorUnico;
+import ar.edu.unahur.obj2.observer.strategy.TipoSubastador;
 
 class ProductoSubatadoTest {
     public ProductoSubastado compu = new ProductoSubastado();
-    public Subastador gonzager = new Subastador("gonzager");
-    public Subastador diazdan = new Subastador("diazdan");
-    public Subastador martomau = new Subastador("martomau");
+
+    public TipoSubastador arriesgado = new SubastadorArriesgado();
+    public TipoSubastador limite = new SubastadorConLimite(50);
+    public TipoSubastador unico = new SubastadorUnico();
+
+    public Subastador gonzager = new Subastador("gonzager", arriesgado);
+    public Subastador diazdan = new Subastador("diazdan", unico);
+    public Subastador martomau = new Subastador("martomau", limite);
 
     @BeforeEach
     void setUp(){
