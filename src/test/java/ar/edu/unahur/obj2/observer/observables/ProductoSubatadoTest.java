@@ -93,4 +93,39 @@ class ProductoSubatadoTest {
         assertThrows(OfertaSubastadorException.class, () -> {diazdan.realizarOferta(40, compu);});
     }
 
+    @Test
+    void ofertanUnNumeroQueNoEsta10ArribaDelAnterriorYSaleExcepcion(){
+        compu.agregarSubastador(gonzager);
+        compu.agregarSubastador(martomau);
+
+        martomau.realizarOferta(10, compu);
+        
+        assertThrows(OfertaSubastadorException.class, () -> {gonzager.realizarOferta(15, compu);});
+    }
+
+    @Test
+    void unSubastadorUnicoIntentaSubastarDosVecesYLaSegundaNoHaceNingunCambio(){
+        compu.agregarSubastador(diazdan);
+        compu.agregarSubastador(martomau);
+
+        diazdan.realizarOferta(10, compu);
+        martomau.realizarOferta(20, compu);
+        diazdan.realizarOferta(30, compu);
+
+        assertEquals(martomau.getNombre(), diazdan.getUltimaOferta().getSubastador().getNombre());
+    }
+
+    @Test
+    void seSuperaElLimiteDelSubastadorYEsteDejaDeOfertar(){
+        compu.agregarSubastador(gonzager);
+        compu.agregarSubastador(martomau);
+
+        martomau.realizarOferta(10, compu);
+        gonzager.realizarOferta(20, compu);
+        martomau.realizarOferta(45, compu);
+        gonzager.realizarOferta(55, compu);
+        martomau.realizarOferta(65, compu);
+
+        assertEquals(gonzager.getNombre(), martomau.getUltimaOferta().getSubastador().getNombre());
+    }
 }

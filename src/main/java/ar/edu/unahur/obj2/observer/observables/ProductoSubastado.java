@@ -40,8 +40,4 @@ public class ProductoSubastado implements Observable{
     public Integer cantDeOfertas(){
         return ofertas.size();
     }
-
-    public Boolean hayOfertas(){
-        return this.cantDeOfertas() > 0;
-    }
 }
