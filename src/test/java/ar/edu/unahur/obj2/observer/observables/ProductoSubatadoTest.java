@@ -29,7 +29,7 @@ class ProductoSubatadoTest {
         compu.agregarSubastador(gonzager);
         compu.agregarSubastador(martomau);
 
-        martomau.primerOferta(10, compu);
+        martomau.realizarOferta(10, compu);
         gonzager.realizarOferta(20, compu);
         martomau.realizarOferta(30, compu);
 
@@ -41,7 +41,7 @@ class ProductoSubatadoTest {
         compu.agregarSubastador(gonzager);
         compu.agregarSubastador(martomau);
 
-        martomau.primerOferta(10, compu);
+        martomau.realizarOferta(10, compu);
         gonzager.realizarOferta(20, compu);
         martomau.realizarOferta(30, compu);
 
@@ -53,7 +53,7 @@ class ProductoSubatadoTest {
         compu.agregarSubastador(gonzager);
         compu.agregarSubastador(martomau);
 
-        martomau.primerOferta(10, compu);
+        martomau.realizarOferta(10, compu);
         gonzager.realizarOferta(20, compu);
         martomau.realizarOferta(30, compu);
 
@@ -65,7 +65,7 @@ class ProductoSubatadoTest {
         compu.agregarSubastador(gonzager);
         compu.agregarSubastador(martomau);
 
-        martomau.primerOferta(10, compu);
+        martomau.realizarOferta(10, compu);
         gonzager.realizarOferta(20, compu);
         martomau.realizarOferta(30, compu);
 
@@ -77,7 +77,7 @@ class ProductoSubatadoTest {
         compu.agregarSubastador(gonzager);
         compu.agregarSubastador(martomau);
 
-        martomau.primerOferta(10, compu);
+        martomau.realizarOferta(10, compu);
         gonzager.realizarOferta(20, compu);
         martomau.realizarOferta(30, compu);
 
